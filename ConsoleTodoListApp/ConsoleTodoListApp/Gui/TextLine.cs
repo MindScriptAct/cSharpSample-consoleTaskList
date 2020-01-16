@@ -4,26 +4,24 @@ using System.Text;
 
 namespace ConsoleTodoListApp.Gui
 {
-    class TextLine
+    class TextLine : GuiObject
     {
-        private int x;
-        private int y;
-        private int width;
         private string data;
 
-        public TextLine(int x, int y, int width, string data)
+        public TextLine(int x, int y, int width, string data) : base(x, y, width, 1)
         {
-            this.x = x;
-            this.y = y;
-            this.width = width;
             this.data = data;
         }
 
-        public void Draw()
+        public override void Draw()
         {
-            Console.SetCursorPosition(x, y);
-            Console.Write(data.Substring(0, width));
-
+            Console.SetCursorPosition(X, Y);
+            string printData = data;
+            if (data.Length > Width)
+            {
+                printData = data.Substring(0, Width);
+            }
+            Console.Write(printData);
         }
     }
 }

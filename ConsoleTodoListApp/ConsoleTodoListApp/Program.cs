@@ -7,6 +7,8 @@ namespace ConsoleTodoListApp
     {
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
+
             Rectangle rectangle = new Rectangle(5, 5, 15, 10);
             rectangle.Draw();
 
@@ -18,6 +20,10 @@ namespace ConsoleTodoListApp
             int width = 2;
             TextLine textLine = new TextLine(x, y, width, "My super todo list app!");
             textLine.Draw();
+
+
+            TextLine copirightText = new TextLine(28, 20, 100, "All right reserved, 2020");
+            copirightText.Draw();
 
             Console.ReadKey();
 

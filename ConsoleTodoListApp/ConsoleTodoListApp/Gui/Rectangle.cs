@@ -4,32 +4,23 @@ using System.Text;
 
 namespace ConsoleTodoListApp.Gui
 {
-    class Rectangle
+    class Rectangle : GuiObject
     {
-        private int x;
-        private int y;
-        private int width;
-        private int height;
-
         private char drawCharacter;
 
-        public Rectangle(int x, int y, int width, int height, char drawCharacter = '#')
+        public Rectangle(int x, int y, int width, int height, char drawCharacter = '#') : base(x, y, width, height)
         {
-            this.x = x;
-            this.y = y;
-            this.width = width;
-            this.height = height;
             this.drawCharacter = drawCharacter;
         }
 
-        public void Draw()
+        public override void Draw()
         {
-            for (int j = 0; j < height; j++)
+            for (int j = 0; j < Height; j++)
             {
-                Console.SetCursorPosition(x, y + j);
-                for (int i = 0; i < width; i++)
+                Console.SetCursorPosition(X, Y + j);
+                for (int i = 0; i < Width; i++)
                 {
-                    if (j == 0 || j == height - 1 || i == 0 || i == width - 1)
+                    if (j == 0 || j == Height - 1 || i == 0 || i == Width - 1)
                     {
                         Console.Write(drawCharacter);
                     }
