@@ -1,4 +1,5 @@
 ﻿using ConsoleTodoListApp.Gui;
+using ConsoleTodoListApp.Gui.Pictures;
 using System;
 
 namespace ConsoleTodoListApp
@@ -9,15 +10,22 @@ namespace ConsoleTodoListApp
         {
             Console.CursorVisible = false;
 
-            Rectangle rectangle = new Rectangle(5, 5, 15, 10);
+            Diamond diamond = new Diamond(5, 5);
+            diamond.Draw();
+
+            Candle candle = new Candle(40, 3);
+            candle.Draw();
+
+
+            Rectangle rectangle = new Rectangle(60, 10, 15, 10);
             rectangle.Draw();
 
-            Rectangle rectangle2 = new Rectangle(3, 7, 5, 7, '+');
+            Rectangle rectangle2 = new Rectangle(60, 7, 5, 7, '+');
             rectangle2.Draw();
 
-            int x = 20; 
-            int y = 2;
-            int width = 2;
+            int x = 30; 
+            int y = 15;
+            int width = 20;
             TextLine textLine = new TextLine(x, y, width, "My super todo list app!");
             textLine.Draw();
 
