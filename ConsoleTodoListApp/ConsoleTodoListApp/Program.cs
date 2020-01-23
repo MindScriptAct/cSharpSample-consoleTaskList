@@ -10,7 +10,11 @@ namespace ConsoleTodoListApp
         {
             Console.CursorVisible = false;
 
-            Diamond diamond = new Diamond(5, 5);
+            Button button = new Button(2, 2, 30, 5, "Press me");
+            button.Draw();
+
+
+            Diamond diamond = new Diamond(5, 10);
             diamond.Draw();
 
             Candle candle = new Candle(40, 3);
