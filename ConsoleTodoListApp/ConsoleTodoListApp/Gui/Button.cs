@@ -8,8 +8,6 @@ namespace ConsoleTodoListApp.Gui
     {
         private TextLine lable;
 
-
-
         public Button(int x, int y, int width, int height, string lableText) : base(x, y, width, height, '#')
         {
             lable = new TextLine(x + 1, y + 1 + ((height - 2) / 2) , width - 2, lableText, true);
