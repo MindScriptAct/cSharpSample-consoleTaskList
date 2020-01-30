@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleTodoListApp.Utils;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -35,8 +36,7 @@ namespace ConsoleTodoListApp.Gui
         {
             for (int i = 0; i < pictureLines.Length; i++)
             {
-                Console.SetCursorPosition(X, Y + i);
-                Console.Write(pictureLines[i]);
+                ConsoleUtil.Draw(X, Y + i, pictureLines[i]);
             }
         }
     }

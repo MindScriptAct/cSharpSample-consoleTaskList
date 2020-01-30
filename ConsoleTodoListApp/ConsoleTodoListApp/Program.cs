@@ -18,12 +18,16 @@ namespace ConsoleTodoListApp
             int menuButtonHeight = 5;
 
             List<string> menuLables = new List<string>() { "Start", "Credit", "Quit" };
+            List<Button> menuButtuns = new List<Button>();
 
             for (int i = 0; i < menuLables.Count; i++)
             {
                 Button button = new Button(menuX + menuGaps * i, menuY, menuButtonWidth, menuButtonHeight, menuLables[i]);
                 button.Draw();
+                menuButtuns.Add(button);
             }
+
+            menuButtuns[1].Activate();
 
             /*
             Diamond diamond = new Diamond(5, 10);
