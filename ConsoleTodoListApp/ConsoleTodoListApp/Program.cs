@@ -1,5 +1,6 @@
 ﻿using ConsoleTodoListApp.Gui;
 using ConsoleTodoListApp.Gui.Pictures;
+using ConsoleTodoListApp.View;
 using System;
 using System.Collections.Generic;
 
@@ -11,23 +12,21 @@ namespace ConsoleTodoListApp
         {
             Console.CursorVisible = false;
 
-            int menuY = 10;
-            int menuX = 15;
-            int menuGaps = 25;
-            int menuButtonWidth = 20;
-            int menuButtonHeight = 5;
 
-            List<string> menuLables = new List<string>() { "Start", "Credit", "Quit" };
-            List<Button> menuButtuns = new List<Button>();
+            MenuWindow menuWindow = new MenuWindow();
 
-            for (int i = 0; i < menuLables.Count; i++)
-            {
-                Button button = new Button(menuX + menuGaps * i, menuY, menuButtonWidth, menuButtonHeight, menuLables[i]);
-                button.Draw();
-                menuButtuns.Add(button);
-            }
+            menuWindow.SetButtonActive(ButtonName.Start);
+            menuWindow.SetButtonActive(ButtonName.Quit);
 
-            menuButtuns[1].Activate();
+            menuWindow.Draw();
+
+
+
+
+            //Window menu = new Window(0, 0, 120, 30, "MENU");
+            //menu.Draw();
+
+            
 
             /*
             Diamond diamond = new Diamond(5, 10);
@@ -50,12 +49,12 @@ namespace ConsoleTodoListApp
             textLine.Draw();
 
 
-            TextLine copirightText = new TextLine(28, 20, 100, "All right reserved, 2020");
-            copirightText.Draw();
+
 
             Console.ReadKey();
 
             */
+            Console.ReadKey();
             Console.SetCursorPosition(0, 25);
         }
     }
