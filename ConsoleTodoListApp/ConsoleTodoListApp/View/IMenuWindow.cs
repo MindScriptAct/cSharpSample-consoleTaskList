@@ -4,10 +4,9 @@ using System.Text;
 
 namespace ConsoleTodoListApp.View
 {
-    public enum ButtonName
+    interface IMenuWindow
     {
-        Start,
-        Credits,
-        Quit,
+        public void SetButtonActive(ButtonName buttonName);
+        public void Draw();
     }
 }
