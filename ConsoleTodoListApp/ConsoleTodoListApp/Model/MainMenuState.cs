@@ -10,6 +10,5 @@ namespace ConsoleTodoListApp.Model
         public MainMenuState() : base(new List<ButtonName>() { ButtonName.Start, ButtonName.Credits, ButtonName.Quit })
         {
         }
-
     }
 }

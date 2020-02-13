@@ -17,6 +17,9 @@ namespace ConsoleTodoListApp
             MenuController menuController = new MenuController(new MainMenuState(), new MainMenuWindow());
             menuController.ShowMenu();
 
+            //TodoListController todoListController = new TodoListController(new TodoListState(), new TodoListWindow());
+            //todoListController.Show();
+
             Console.SetCursorPosition(0, 25);
         }
     }
