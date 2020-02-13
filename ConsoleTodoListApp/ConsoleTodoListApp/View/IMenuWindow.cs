@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleTodoListApp.View
 {
-    interface IMenuWindow
+    public interface IMenuWindow
     {
         public void SetButtonActive(ButtonName buttonName);
         public void Draw();

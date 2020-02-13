@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ConsoleTodoListApp.Model
 {
-    interface IMenuState
+    public interface IMenuState
     {
         int ActiveButtonNr { get; set; }
         int TotalButtonCount { get; }

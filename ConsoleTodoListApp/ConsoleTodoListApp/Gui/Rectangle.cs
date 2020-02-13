@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ConsoleTodoListApp.Gui
 {
-    class Rectangle : GuiObject
+    public class Rectangle : GuiObject
     {
         private char drawCharacter;
 

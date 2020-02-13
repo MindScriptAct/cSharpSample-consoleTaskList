@@ -1,9 +1,10 @@
-﻿using ConsoleTodoListApp.Model;
+﻿using ConsoleTodoListApp.Constants;
+using ConsoleTodoListApp.Model;
 using System;
 
 namespace ConsoleTodoListApp.Controller
 {
-    internal class TodoListController
+    internal class TodoListController : IAppController
     {
         private ITodoListState todoListState;
         private ITodoListWindow todoListWindow;
@@ -14,9 +15,13 @@ namespace ConsoleTodoListApp.Controller
             this.todoListWindow = todoListWindow;
         }
 
-        internal void Show()
+        public AppMode Execute()
         {
             todoListWindow.Draw();
+
+            Console.ReadKey(true);
+
+            return AppMode.Menu;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using ConsoleTodoListApp.Model;
+﻿using ConsoleTodoListApp.Constants;
+using ConsoleTodoListApp.Model;
 using ConsoleTodoListApp.View;
 using System;
 using System.Collections.Generic;
@@ -10,21 +11,30 @@ namespace ConsoleTodoListApp.Controller
     /// <summary>
     /// Will controll how menu works.
     /// </summary>
-    class MenuController
+    public class MenuController : IAppController
     {
         private readonly IMenuState menuState;
         private readonly IMenuWindow menuWindow;
-        private bool showMenu;
+
+        private int test;
 
         public MenuController(IMenuState menuState, IMenuWindow menuWindow)
         {
             this.menuState = menuState;
             this.menuWindow = menuWindow;
-            showMenu = true;
         }
 
-        public void ShowMenu()
+        public AppMode Execute()
         {
+            bool showMenu = true;
+            AppMode retVal = AppMode.Exit;
+
+            void QuitMenu()
+            {
+                showMenu = false;
+                retVal = AppMode.Exit;
+            }
+
             DrawMenuState();
 
             ConsoleKeyInfo keyinfo;
@@ -69,25 +79,23 @@ namespace ConsoleTodoListApp.Controller
                         DrawMenuState();
                         break;
                     case ConsoleKey.Enter:
-
+                        // check what is active, for next step.
                         switch (menuState.ActiveButtonName)
                         {
                             case ButtonName.Start:
-                                throw new NotImplementedException("start todo app");
+                                retVal = AppMode.ToDoList;
                                 break;
                             case ButtonName.Credits:
-                                throw new NotImplementedException("Show credits");
+                                retVal = AppMode.Credits;
                                 break;
                             case ButtonName.Quit:
                                 QuitMenu();
                                 break;
                             default:
                                 break;
-                        }
-
-                        // check what is active...
-                        // do stuff..
-                        Console.WriteLine("Enter");
+                        } 
+                        // no need to show menu.
+                        showMenu = false;
                         break;
                     case ConsoleKey.Escape:
                         // exit. app..
@@ -98,12 +106,11 @@ namespace ConsoleTodoListApp.Controller
                 }
             }
             while (showMenu);
+
+            return retVal;
         }
 
-        private void QuitMenu()
-        {
-            showMenu = false;
-        }
+
 
         private void DrawMenuState()
         {

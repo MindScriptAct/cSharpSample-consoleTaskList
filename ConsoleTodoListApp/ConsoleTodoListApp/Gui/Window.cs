@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleTodoListApp.Gui
 {
-    class Window : Rectangle
+    public class Window : Rectangle
     {
         private TextLine lable;
 

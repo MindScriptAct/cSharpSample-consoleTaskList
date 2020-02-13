@@ -14,11 +14,10 @@ namespace ConsoleTodoListApp
         {
             Console.CursorVisible = false;
 
-            MenuController menuController = new MenuController(new MainMenuState(), new MainMenuWindow());
-            menuController.ShowMenu();
+            AppController app = new AppController();
+            app.Start();
 
-            //TodoListController todoListController = new TodoListController(new TodoListState(), new TodoListWindow());
-            //todoListController.Show();
+
 
             Console.SetCursorPosition(0, 25);
         }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ConsoleTodoListApp.Gui
 {
-    abstract class GuiObject : IDrawable
+    public abstract class GuiObject : IDrawable
     {
         protected int X { get; set; }
         protected int Y { get; set; }
